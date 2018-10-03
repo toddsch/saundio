@@ -1,0 +1,7 @@
+Version 1:
+
+- Scans media for audio files
+- Play, pause, prev/next track, fast forward/rewind, scrub bar
+- Song search
+- Sort songs asc/desc, length asc/desc, date added asc/desc
+- Shows persistent notification for play/pause and prev/next track
