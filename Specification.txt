@@ -1,6 +1,6 @@
 Version 1:
 
-- Scans media for audio files
+- Scans media for audio files and show results in a list
 - Play, pause, prev/next track, fast forward/rewind, scrub bar
 - Song search
 - Sort songs asc/desc, length asc/desc, date added asc/desc
