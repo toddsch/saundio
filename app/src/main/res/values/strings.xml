@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">saundio</string>
+    <string name="enable">Enable</string>
+    <string name="permission_required_to_view_library">Permission required to view library</string>
 </resources>
