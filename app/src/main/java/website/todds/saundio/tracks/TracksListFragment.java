@@ -42,7 +42,20 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
     private Snackbar mSnackbar;
 
     // Listens for requests to update the tracks list
-    private BroadcastReceiver mReceiver;
+    private BroadcastReceiver mTracksReceiver;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mTracksReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                fetchTracks();
+            }
+        };
+        BroadcastUtil.regLocal(getActivity(), mTracksReceiver, BroadAction.REFRESH_TRACKS_LIST);
+    }
 
     @Nullable
     @Override
@@ -65,14 +78,6 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
             }
         });
 
-        mReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                fetchTracks();
-            }
-        };
-        BroadcastUtil.regLocal(getActivity(), mReceiver, BroadAction.REFRESH_TRACKS_LIST);
-
         return root;
     }
 
@@ -90,7 +95,7 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
     @Override
     public void onDestroy() {
         super.onDestroy();
-        BroadcastUtil.unregLocal(getActivity(), mReceiver);
+        BroadcastUtil.unregLocal(getActivity(), mTracksReceiver);
     }
 
     /*
