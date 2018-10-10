@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/viewgroup_order_by_available_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#ccc"
+        android:minHeight="@dimen/order_by_bucket_min_height"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_margin"
+        app:flexWrap="wrap" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewgroup_order_by_available_tags"
+        android:minHeight="@dimen/order_by_bucket_min_height">
+
+        <LinearLayout
+            android:id="@+id/viewgroup_order_by_selected_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:minHeight="@dimen/order_by_bucket_min_height"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/viewgroup_order_by_selected_tags_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/drag_some_tags_quip"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+</RelativeLayout>

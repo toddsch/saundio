@@ -2,4 +2,10 @@
     <string name="app_name">saundio</string>
     <string name="enable">Enable</string>
     <string name="permission_required_to_view_library">Permission required to view library</string>
+    <string name="descending">Descending</string>
+    <string name="ascending">Ascending</string>
+    <string name="sort_tracks">Sort Tracks</string>
+    <string name="content_desc_sort_rules_add_new">Add new row to select another piece of information to sort music by</string>
+    <string name="content_desc_sort_rules_item_delete">Removes the item for sorting the tracks list.</string>
+    <string name="drag_some_tags_quip">Drag some tags from above to start sorting!</string>
 </resources>

@@ -156,15 +156,16 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
         if (id == LoaderIds.TRACKS_LIST_FRAGMENT_LOADER) {
             final String[] PROJECTION = {
                     _ID,
-                    TITLE,
-                    ARTIST,
-                    ARTIST_ID,
                     ALBUM,
                     ALBUM_ID,
+                    ARTIST,
+                    ARTIST_ID,
+                    DATE_ADDED,
                     DURATION,
-                    DATE_ADDED
+                    TITLE,
+                    TRACK,
             };
-            TracksListPrefsHelper prefs = new TracksListPrefsHelper(getActivity());
+            TracksListPrefs prefs = new TracksListPrefs(getActivity());
 
             return new CursorLoader(
                     getActivity(),
@@ -173,7 +174,7 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
                     // Collect sorting preferences from shared preferences
                     prefs.getSelection(null),
                     prefs.getSelectionArgs(null),
-                    prefs.getSortOrder(TRACK + " asc")
+                    prefs.getOrderColumns()
             );
         }
         return null;
@@ -204,8 +205,14 @@ public class TracksListFragment extends RecyclerFragment implements LoaderManage
     }
 
     private void fetchTracks() {
+        LoaderManager manager = getLoaderManager();
+
+        // Destroy the current loader if it exists
+        if (manager.getLoader(LoaderIds.TRACKS_LIST_FRAGMENT_LOADER) != null)
+            manager.destroyLoader(LoaderIds.TRACKS_LIST_FRAGMENT_LOADER);
+
         // We're ignoring the use of Bundles for the loader since we're using SharedPreferences
         // instead -- we want the user's sorting options to be persistent.
-        getLoaderManager().initLoader(LoaderIds.TRACKS_LIST_FRAGMENT_LOADER, null, this);
+        manager.initLoader(LoaderIds.TRACKS_LIST_FRAGMENT_LOADER, null, this);
     }
 }

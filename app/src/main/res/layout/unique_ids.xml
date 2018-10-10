@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This file is used to hold unique integers that the build system will generate. So far, it's
+    useful for creating keys to interact with View.setTag(int key, Obj) / View.getTag(int key). More
+    specifically, before I used this file, I'd get the following error:
+
+    java.lang.IllegalArgumentException: The key must be an application-specific resource id.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="0dp">
+
+    <View
+        android:id="@+id/order_by_direction"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+</FrameLayout>

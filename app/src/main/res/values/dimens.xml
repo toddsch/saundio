@@ -1,3 +1,6 @@
 <resources>
     <dimen name="default_margin">8dp</dimen>
+    <dimen name="dragtag_margin">4dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="order_by_bucket_min_height">160dp</dimen>
 </resources>
