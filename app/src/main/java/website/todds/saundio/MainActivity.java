@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         mToolbar.setOnMenuItemClickListener(this);
 
         mToolbar.inflateMenu(R.menu.main_activity_toolbar_menu);
+        mToolbar.setTitle(R.string.app_name);
     }
 
     @Override
