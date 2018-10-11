@@ -77,7 +77,16 @@ public class SearchFragment extends DialogFragment {
 
     I really really REALLY wanted to implement some sort of background blurring for this fragment
     but it was either computationally too expensive or it just didn't look good with only blurring
-    text. That being said, I'm not ready to throw away this code that I found online and modified:
+    text.
+
+    Upon further research I found:
+
+    https://android.jlelse.eu/the-blurry-frosted-background-is-a-common-pattern-on-ios-where-they-have-simply-controls-to-cbd0c5843e5f
+
+    ... which seems to be a decently solid implementation. Maybe it'll still be too expensive to
+    blur the entire phone screen? Who knows until I come back to trying our blurs again.
+
+    All that being said, I'm not yet ready to throw out this code:
 
     ... implements ViewTreeObserver.OnPreDrawListener
 
