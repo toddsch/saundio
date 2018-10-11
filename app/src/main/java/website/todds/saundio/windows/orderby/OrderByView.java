@@ -1,4 +1,4 @@
-package website.todds.saundio.tracks;
+package website.todds.saundio.windows.orderby;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -18,8 +18,8 @@ import java.util.List;
 import website.todds.dragtag.DragTag;
 import website.todds.dragtag.DragTagListener;
 import website.todds.saundio.R;
+import website.todds.saundio.windows.tracks.TracksListPrefs;
 import website.todds.toddlibs.andrutils.ArrayUtil;
-import website.todds.toddlibs.andrutils.DeviceUtil;
 import website.todds.toddlibs.andrutils.StrUtil;
 
 import static android.provider.MediaStore.Audio.AudioColumns.ALBUM;
