@@ -8,4 +8,6 @@
     <string name="content_desc_sort_rules_add_new">Add new row to select another piece of information to sort music by</string>
     <string name="content_desc_sort_rules_item_delete">Removes the item for sorting the tracks list.</string>
     <string name="drag_some_tags_quip">Drag some tags from above to start sorting!</string>
+    <string name="search_library">Search Library</string>
+    <string name="search_library_prompt">Search library (tracks, artists…)</string>
 </resources>
