@@ -18,7 +18,6 @@ import website.todds.toddlibs.andrutils.DialogUtil;
 public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
 
     private Toolbar mToolbar;
-    private ViewPager mPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         tracks.setLayoutManager(this, true, false);
 
-        mPager = findViewById(R.id.main_pager);
-        mPager.setAdapter(new MainPagerAdapter(this, getSupportFragmentManager()));
+        ViewPager pager = findViewById(R.id.main_pager);
+        pager.setAdapter(new MainPagerAdapter(this, getSupportFragmentManager()));
     }
 
     private void setupToolbar() {
@@ -62,10 +61,6 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 break;
         }
         return true;
-    }
-
-    public final Toolbar getToolbar() {
-        return mToolbar;
     }
 
     @Override
