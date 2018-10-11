@@ -1,21 +1,24 @@
-package website.todds.saundio;
+package website.todds.saundio.windows;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import website.todds.saundio.R;
+import website.todds.saundio.util.BroadAction;
 import website.todds.saundio.windows.orderby.OrderByView;
 import website.todds.saundio.windows.tracks.TracksListFragment;
-import website.todds.saundio.util.BroadAction;
 import website.todds.toddlibs.andrutils.BroadcastUtil;
 import website.todds.toddlibs.andrutils.DialogUtil;
 
 public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
 
     private Toolbar mToolbar;
+    private ViewPager mPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,8 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         tracks.setLayoutManager(this, true, false);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment, tracks)
-                .commit();
+        mPager = findViewById(R.id.main_pager);
+        mPager.setAdapter(new MainPagerAdapter(this, getSupportFragmentManager()));
     }
 
     private void setupToolbar() {
@@ -61,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 break;
         }
         return true;
+    }
+
+    public final Toolbar getToolbar() {
+        return mToolbar;
     }
 
     @Override
