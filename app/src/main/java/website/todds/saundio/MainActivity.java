@@ -3,10 +3,12 @@ package website.todds.saundio;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import website.todds.saundio.windows.MainPagerAdapter;
 import website.todds.saundio.windows.orderby.OrderByView;
 import website.todds.saundio.windows.tracks.TracksListFragment;
 import website.todds.saundio.util.BroadAction;
@@ -28,10 +30,8 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         tracks.setLayoutManager(this, true, false);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment, tracks)
-                .commit();
+        ViewPager pager = findViewById(R.id.main_pager);
+        pager.setAdapter(new MainPagerAdapter(this, getSupportFragmentManager()));
     }
 
     private void setupToolbar() {

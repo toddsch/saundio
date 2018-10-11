@@ -14,7 +14,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
     private Activity activity;
 
-    MainPagerAdapter(Activity activity, FragmentManager fm) {
+    public MainPagerAdapter(Activity activity, FragmentManager fm) {
         super(fm);
         this.activity = activity;
     }
