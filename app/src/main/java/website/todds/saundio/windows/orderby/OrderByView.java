@@ -18,7 +18,7 @@ import java.util.List;
 import website.todds.dragtag.DragTag;
 import website.todds.dragtag.DragTagListener;
 import website.todds.saundio.R;
-import website.todds.saundio.windows.tracks.TracksListPrefs;
+import website.todds.saundio.windows.library.LibraryPrefs;
 import website.todds.toddlibs.andrutils.ArrayUtil;
 import website.todds.toddlibs.andrutils.StrUtil;
 
@@ -61,7 +61,7 @@ public class OrderByView extends RelativeLayout implements DragTag.OnPrimaryClic
         mAvailableTags.setOnDragListener(new DragTagListener());
         mSelectedTags.setOnDragListener(new DragTagListener());
 
-        TracksListPrefs prefs = new TracksListPrefs(getContext());
+        LibraryPrefs prefs = new LibraryPrefs(getContext());
 
         // Keep track of which terms weren't selected by the user
         final List<String> REMAINING_TERMS = ArrayUtil.toList(SORT_TERMS);
@@ -108,7 +108,7 @@ public class OrderByView extends RelativeLayout implements DragTag.OnPrimaryClic
     }
 
     /**
-     * Saves the current custom sorting rules to {@link TracksListPrefs}.
+     * Saves the current custom sorting rules to {@link LibraryPrefs}.
      */
     public void save() {
         mSelectedTags.clearFocus();
@@ -129,7 +129,7 @@ public class OrderByView extends RelativeLayout implements DragTag.OnPrimaryClic
             }
         }
 
-        TracksListPrefs prefs = new TracksListPrefs(getContext());
+        LibraryPrefs prefs = new LibraryPrefs(getContext());
         prefs.setOrderColumns(StrUtil.removeLastChar(orderBy.toString()));
     }
 

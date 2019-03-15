@@ -3,4 +3,6 @@
     <dimen name="dragtag_margin">4dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="order_by_bucket_min_height">160dp</dimen>
+    <dimen name="playpause_dim">70dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
 </resources>

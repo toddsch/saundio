@@ -1,0 +1,13 @@
+<com.subwranglers.pucker.Pucker xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/playpause_pucker"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_default">
+
+    <View
+        android:layout_width="@dimen/playpause_dim"
+        android:layout_height="@dimen/playpause_dim"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_play_button" />
+
+</com.subwranglers.pucker.Pucker>
